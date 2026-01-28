@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DuckyStore</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <img src="logo.jpeg" class="logo" alt="DuckyStore Logo">
+    <h1>DuckyStore</h1>
+  </div>
+
+  <div class="header-right">
+    <span id="user-info"></span>
+    <button class="login-btn" onclick="toggleLogin()">Login</button>
+
+    <!-- Hapus tombol keranjang dari header -->
+    <!-- <button class="cart-btn" onclick="toggleCart()">🛒 <span id="cart-count">0</span></button> -->
+
+    <label class="switch">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="slider"></span>
+    </label>
+  </div>
+</header>
+
+<nav class="navbar">
+  <ul class="categories">
+    <li><a href="#">Canva</a></li>
+    <li><a href="#">CapCut Pro</a></li>
+    <li><a href="#">ChatGPT</a></li>
+    <li><a href="#">Netflix</a></li>
+    <li><a href="#">Spotify</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <h2>Belanja Digital Jadi Lebih Mudah</h2>
+    <p>Canva • CapCut • Aplikasi Premium Murah & Aman</p>
+    <button onclick="document.querySelector('.container').scrollIntoView({behavior:'smooth'})">Lihat Produk</button>
+  </div>
+</section>
+
+<main class="container">
+
+  <!-- PRODUK CANVA -->
+  <div class="product">
+    <img src="canva.jpeg" alt="Canva" style="cursor:pointer" onclick="window.location.href='canva.html'">
+    <h3 style="cursor:pointer" onclick="window.location.href='canva.html'">Canva</h3>
+    <p class="price">Rp 15.000</p>
+    <button onclick="window.location.href='canva.html'">Beli</button>
+  </div>
+
+  <!-- PRODUK CAPCUT -->
+  <div class="product">
+    <img src="capcut.png" alt="CapCut Pro" style="cursor:pointer" onclick="window.location.href='capcut.html'">
+    <h3 style="cursor:pointer" onclick="window.location.href='capcut.html'">CapCut Pro</h3>
+    <p class="price">Rp 10.000</p>
+    <button onclick="window.location.href='capcut.html'">Beli</button>
+  </div>
+
+  <!-- PRODUK CHATGPT -->
+  <div class="product">
+    <img src="chatgpt.png" alt="ChatGPT" style="cursor:pointer" onclick="window.location.href='chatgpt.html'">
+    <h3 style="cursor:pointer" onclick="window.location.href='chatgpt.html'">ChatGPT</h3>
+    <p class="price">Rp 20.000</p>
+    <button onclick="window.location.href='chatgpt.html'">Beli</button>
+  </div>
+
+  <!-- PRODUK NETFLIX -->
+  <div class="product">
+    <img src="netflix.png" alt="Netflix" style="cursor:pointer" onclick="window.location.href='netflix.html'">
+    <h3 style="cursor:pointer" onclick="window.location.href='netflix.html'">Netflix</h3>
+    <p class="price">Rp 35.000</p>
+    <button onclick="window.location.href='netflix.html'">Beli</button>
+  </div>
+
+  <!-- PRODUK SPOTIFY -->
+  <div class="product">
+    <img src="spotify.png" alt="Spotify" style="cursor:pointer" onclick="window.location.href='spotify.html'">
+    <h3 style="cursor:pointer" onclick="window.location.href='spotify.html'">Spotify</h3>
+    <p class="price">Rp 10.000</p>
+    <button onclick="window.location.href='spotify.html'">Beli</button>
+  </div>
+
+</main>
+
+<!-- CART tetap ada tapi tidak muncul di header -->
+<div class="cart-popup" id="cart">
+  <h2>Keranjang</h2>
+  <ul id="cart-items"></ul>
+  <p>Total: Rp <span id="total">0</span></p>
+  <a id="wa-link" target="_blank"><button>Checkout WhatsApp</button></a>
+</div>
+
+<!-- LOGIN -->
+<div class="login-popup" id="loginBox">
+  <h2>Login</h2>
+  <input type="text" id="username" placeholder="Username">
+  <button onclick="login()">Masuk</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
