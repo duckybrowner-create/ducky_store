@@ -44,6 +44,8 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            cursor: pointer;
+            user-select: none;
         }
 
         nav ul {
@@ -541,6 +543,46 @@
     </footer>
 
     <script>
+        // Hidden admin access - double-tap logo atau tekan A 3x
+        let logoTaps = 0;
+        let lastLogoTapTime = 0;
+        let adminTaps = 0;
+        let lastTapTime = 0;
+        
+        // Double-tap logo untuk login
+        document.querySelector('.logo').addEventListener('click', function() {
+            let currentTime = new Date().getTime();
+            if (currentTime - lastLogoTapTime > 500) {
+                logoTaps = 1;
+            } else {
+                logoTaps++;
+            }
+            lastLogoTapTime = currentTime;
+            
+            if (logoTaps === 2) {
+                window.location.href = 'login.html';
+                logoTaps = 0;
+            }
+        });
+        
+        // Keyboard shortcut - tekan A 3x untuk login
+        document.addEventListener('keydown', function(e) {
+            if (e.key.toLowerCase() === 'a') {
+                let currentTime = new Date().getTime();
+                if (currentTime - lastTapTime > 500) {
+                    adminTaps = 1;
+                } else {
+                    adminTaps++;
+                }
+                lastTapTime = currentTime;
+                
+                if (adminTaps === 3) {
+                    window.location.href = 'login.html';
+                    adminTaps = 0;
+                }
+            }
+        });
+
         // Load products dari localStorage
         function loadProducts() {
             const products = JSON.parse(localStorage.getItem('products')) || [];
@@ -578,27 +620,6 @@
 
         // Load products on page load
         loadProducts();
-
-        // Hidden admin access - tekan 'A' 3x dengan cepat untuk membuka login
-        let adminTaps = 0;
-        let lastTapTime = 0;
-        
-        document.addEventListener('keydown', function(e) {
-            if (e.key.toLowerCase() === 'a') {
-                let currentTime = new Date().getTime();
-                if (currentTime - lastTapTime > 500) {
-                    adminTaps = 1;
-                } else {
-                    adminTaps++;
-                }
-                lastTapTime = currentTime;
-                
-                if (adminTaps === 3) {
-                    window.location.href = 'login.html';
-                    adminTaps = 0;
-                }
-            }
-        });
     </script>
 </body>
 </html>
