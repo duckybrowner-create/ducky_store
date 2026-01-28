@@ -1,0 +1,8 @@
+{
+  "buildCommand": "",
+  "installCommand": "",
+  "framework": "vanilla",
+  "outputDirectory": ".",
+  "public": true,
+  "functions": {}
+}
