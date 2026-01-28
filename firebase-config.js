@@ -39,39 +39,61 @@ if (firebaseConfig.apiKey !== "YOUR_API_KEY") {
 
 // Sync Products ke Firebase (jika connected)
 function syncProductsToFirebase() {
-  if (!isFirebaseConnected || !db) return;
+  if (!isFirebaseConnected || !db) {
+    console.warn('⚠️ Firebase not connected, saving to localStorage only');
+    return;
+  }
   
   const products = JSON.parse(localStorage.getItem('products')) || [];
   db.ref('products').set(products)
-    .then(() => console.log('✅ Produk disync ke Firebase'))
-    .catch(err => console.error('❌ Sync error:', err));
+    .then(() => {
+      console.log('✅ Produk disync ke Firebase:', products.length, 'items');
+    })
+    .catch(err => {
+      console.error('❌ Sync error:', err.code, err.message);
+    });
 }
 
 // Load Products dari Firebase (jika connected)
 function loadProductsFromFirebase() {
-  if (!isFirebaseConnected || !db) return;
+  if (!isFirebaseConnected || !db) {
+    console.warn('⚠️ Firebase not connected, using localStorage');
+    return;
+  }
   
-  db.ref('products').on('value', (snapshot) => {
-    const products = snapshot.val() || [];
-    localStorage.setItem('products', JSON.stringify(products));
-    console.log('✅ Produk diupdate dari Firebase');
-    
-    // Trigger reload di halaman jika ada
-    if (typeof loadProducts === 'function') {
-      loadProducts();
-    }
-    if (typeof updateCartUI === 'function') {
-      updateCartUI();
-    }
-  });
+  try {
+    db.ref('products').on('value', (snapshot) => {
+      const products = snapshot.val() || [];
+      console.log('🔄 Produk diupdate dari Firebase:', products.length, 'items');
+      localStorage.setItem('products', JSON.stringify(products));
+      
+      // Trigger reload di halaman jika ada
+      if (typeof loadProducts === 'function') {
+        loadProducts();
+      }
+      if (typeof updateCartUI === 'function') {
+        updateCartUI();
+      }
+      if (typeof updateStats === 'function') {
+        updateStats();
+      }
+    }, (error) => {
+      console.error('❌ Firebase listener error:', error.code, error.message);
+    });
+  } catch (error) {
+    console.error('❌ Error setting up Firebase listener:', error);
+  }
 }
 
 // Setup Firebase Real-time Listener
 if (isFirebaseConnected) {
+  console.log('🔄 Setting up Firebase listeners...');
   loadProductsFromFirebase();
   
   // Setup listener untuk sync otomatis setiap ada perubahan
   setInterval(() => {
     syncProductsToFirebase();
   }, 5000); // Sync setiap 5 detik
+  
+  console.log('✅ Firebase listeners setup complete');
 }
