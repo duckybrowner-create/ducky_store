@@ -22,8 +22,7 @@
         <img src="canva.jpeg" alt="Canva Pro" class="detail-img">
         <div class="detail-info">
             <h2>Canva Pro Premium</h2>
-            <p>Akun Canva Pro aktif 30 hari • Full akses premium</p>
-            <p class="price">Rp 15.000</p>
+            <p>Akun Canva Pro aktif 30 hari Full akses premium</p>
             <button onclick="checkoutWA('Canva Pro Premium','Rp 15.000')">Checkout WhatsApp</button>
         </div>
     </div>
@@ -32,7 +31,7 @@
 <script>
 function checkoutWA(name, price){
     const phone = "6283199415324";
-    const text = `Halo admin, saya mau beli:\n\nProduk: ${name}\nHarga: ${price}`;
+    const text = `Halo, saya mau beli:\n\nProduk: ${name}\n:`;
     window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`);
 }
 </script>

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petunjuk Penggunaan - DuckyStore</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .content {
+            padding: 2rem;
+        }
+
+        h2 {
+            color: #667eea;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #667eea;
+        }
+
+        h3 {
+            color: #764ba2;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .demo-box {
+            background: #f0f8ff;
+            border-left: 4px solid #667eea;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+        }
+
+        .demo-box strong {
+            color: #667eea;
+        }
+
+        .step {
+            background: #f5f5f5;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+            border-left: 4px solid #667eea;
+        }
+
+        .step-number {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 0.5rem;
+            font-weight: bold;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .feature-list li {
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        button, a.btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-secondary {
+            background: #f5f5f5;
+            color: #333;
+            border: 2px solid #667eea;
+        }
+
+        .btn-secondary:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .alert {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-left: 4px solid #ffc107;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+        }
+
+        .alert strong {
+            color: #856404;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 0.8rem;
+            text-align: left;
+        }
+
+        th {
+            background: #f5f5f5;
+            font-weight: bold;
+            color: #333;
+        }
+
+        footer {
+            background: #f5f5f5;
+            padding: 2rem;
+            text-align: center;
+            color: #999;
+            border-top: 1px solid #ddd;
+        }
+
+        .quick-access {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .quick-access-card {
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .quick-access-card:hover {
+            border-color: #667eea;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+        }
+
+        .quick-access-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .quick-access-card h4 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .quick-access-card p {
+            font-size: 0.9rem;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🦆 DuckyStore</h1>
+            <p>Panduan Lengkap Penggunaan Aplikasi</p>
+        </header>
+
+        <div class="content">
+            <!-- QUICK ACCESS -->
+            <h2>🚀 Akses Cepat</h2>
+            <div class="quick-access">
+                <div class="quick-access-card" onclick="window.location.href='landing.html'">
+                    <div class="icon">🏠</div>
+                    <h4>Landing Page</h4>
+                    <p>Halaman utama aplikasi</p>
+                </div>
+                <div class="quick-access-card" onclick="window.location.href='index.html'">
+                    <div class="icon">🛒</div>
+                    <h4>Toko/Produk</h4>
+                    <p>Lihat dan belanja produk</p>
+                </div>
+                <div class="quick-access-card" onclick="window.location.href='login.html'">
+                    <div class="icon">🔐</div>
+                    <h4>Admin Login</h4>
+                    <p>Masuk ke dashboard admin</p>
+                </div>
+                <div class="quick-access-card" onclick="window.location.href='dashboard.html'">
+                    <div class="icon">📊</div>
+                    <h4>Dashboard</h4>
+                    <p>Panel admin (perlu login)</p>
+                </div>
+            </div>
+
+            <!-- DEMO LOGIN -->
+            <h2>🔐 Demo Login Admin</h2>
+            <div class="demo-box">
+                <p><strong>Email:</strong> admin@duckystore.com</p>
+                <p><strong>Password:</strong> admin123</p>
+            </div>
+            <p>Gunakan kredensial di atas untuk login dan mencoba semua fitur dashboard admin.</p>
+
+            <!-- FITUR UTAMA -->
+            <h2>✨ Fitur-Fitur Utama</h2>
+            <ul class="feature-list">
+                <li>Sistem login dan register admin yang aman</li>
+                <li>Dashboard komprehensif dengan statistik real-time</li>
+                <li>Manajemen produk lengkap (tambah, edit, hapus)</li>
+                <li>Kelola profil admin dan ubah password</li>
+                <li>Pengaturan aplikasi dan preferensi</li>
+                <li>Halaman landing modern seperti Facebook</li>
+                <li>Keranjang belanja dan checkout via WhatsApp</li>
+                <li>Dark mode support</li>
+                <li>Responsive design untuk semua perangkat</li>
+                <li>Data tersimpan di browser (localStorage)</li>
+            </ul>
+
+            <!-- PANDUAN LANGKAH DEMI LANGKAH -->
+            <h2>📖 Panduan Langkah Demi Langkah</h2>
+
+            <h3>Langkah 1: Membuka Landing Page</h3>
+            <div class="step">
+                <span class="step-number">1</span>
+                Buka file <strong>landing.html</strong> di browser
+            </div>
+            <p>Anda akan melihat halaman utama DuckyStore dengan fitur-fitur aplikasi.</p>
+
+            <h3>Langkah 2: Login ke Admin Panel</h3>
+            <div class="step">
+                <span class="step-number">2</span>
+                Klik tombol <strong>"Admin Login"</strong> di halaman landing atau buka <strong>login.html</strong>
+            </div>
+            <div class="step">
+                <span class="step-number">3</span>
+                Masukkan email dan password (gunakan demo login di atas)
+            </div>
+            <div class="step">
+                <span class="step-number">4</span>
+                Klik tombol <strong>"Login"</strong>
+            </div>
+
+            <h3>Langkah 3: Menggunakan Dashboard</h3>
+            <p>Setelah login, Anda akan masuk ke dashboard dengan menu utama:</p>
+            <ul class="feature-list">
+                <li><strong>Dashboard</strong> - Lihat statistik penjualan</li>
+                <li><strong>Kelola Produk</strong> - Tambah, edit, atau hapus produk</li>
+                <li><strong>Statistik</strong> - Analisis penjualan detail</li>
+                <li><strong>Profile</strong> - Lihat data profil dan ubah password</li>
+                <li><strong>Pengaturan</strong> - Konfigurasi aplikasi</li>
+                <li><strong>Logout</strong> - Keluar dari akun</li>
+            </ul>
+
+            <!-- TAMBAH PRODUK -->
+            <h2>📦 Cara Menambah Produk</h2>
+            <div class="step">
+                <span class="step-number">1</span>
+                Di dashboard, klik menu <strong>"Kelola Produk"</strong>
+            </div>
+            <div class="step">
+                <span class="step-number">2</span>
+                Isi form dengan informasi produk:
+            </div>
+            <table>
+                <tr>
+                    <th>Field</th>
+                    <th>Keterangan</th>
+                </tr>
+                <tr>
+                    <td>Nama Produk</td>
+                    <td>Nama produk yang akan dijual</td>
+                </tr>
+                <tr>
+                    <td>Harga (Rp)</td>
+                    <td>Harga produk dalam rupiah</td>
+                </tr>
+                <tr>
+                    <td>URL Gambar</td>
+                    <td>Link gambar produk (opsional)</td>
+                </tr>
+                <tr>
+                    <td>Deskripsi</td>
+                    <td>Penjelasan singkat produk (opsional)</td>
+                </tr>
+            </table>
+            <div class="step">
+                <span class="step-number">3</span>
+                Klik tombol <strong>"Tambah Produk"</strong>
+            </div>
+
+            <!-- BELANJA -->
+            <h2>🛒 Cara Berbelanja</h2>
+            <div class="step">
+                <span class="step-number">1</span>
+                Buka halaman <strong>index.html</strong> (halaman toko)
+            </div>
+            <div class="step">
+                <span class="step-number">2</span>
+                Lihat daftar produk yang ditampilkan
+            </div>
+            <div class="step">
+                <span class="step-number">3</span>
+                Klik <strong>"Beli Sekarang"</strong> untuk menambah ke keranjang
+            </div>
+            <div class="step">
+                <span class="step-number">4</span>
+                Klik tombol <strong>"🛒 Keranjang"</strong> untuk melihat keranjang
+            </div>
+            <div class="step">
+                <span class="step-number">5</span>
+                Klik <strong>"Checkout WhatsApp"</strong> untuk melanjutkan pembelian
+            </div>
+
+            <!-- STRUKTUR FILE -->
+            <h2>📁 Struktur File & Penjelasan</h2>
+            <table>
+                <tr>
+                    <th>File</th>
+                    <th>Fungsi</th>
+                </tr>
+                <tr>
+                    <td><strong>landing.html</strong></td>
+                    <td>Halaman utama (seperti Facebook)</td>
+                </tr>
+                <tr>
+                    <td><strong>login.html</strong></td>
+                    <td>Halaman login & register admin</td>
+                </tr>
+                <tr>
+                    <td><strong>dashboard.html</strong></td>
+                    <td>Dashboard admin dengan semua fitur</td>
+                </tr>
+                <tr>
+                    <td><strong>index.html</strong></td>
+                    <td>Halaman toko/produk publik</td>
+                </tr>
+                <tr>
+                    <td><strong>auth.js</strong></td>
+                    <td>Sistem autentikasi dan login</td>
+                </tr>
+                <tr>
+                    <td><strong>script.js</strong></td>
+                    <td>Script JavaScript global</td>
+                </tr>
+                <tr>
+                    <td><strong>style.css</strong></td>
+                    <td>Stylesheet untuk semua halaman</td>
+                </tr>
+            </table>
+
+            <!-- TIPS & TRIK -->
+            <h2>💡 Tips & Trik</h2>
+            <div class="alert">
+                <strong>💾 Data Tersimpan:</strong> Semua data aplikasi tersimpan di browser lokal Anda. Data akan hilang jika cache browser dihapus.
+            </div>
+            <div class="alert">
+                <strong>🔒 Keamanan:</strong> Untuk penggunaan production, gunakan backend dan database yang aman, bukan hanya localStorage.
+            </div>
+            <div class="alert">
+                <strong>📱 Responsive:</strong> Aplikasi sudah dioptimalkan untuk desktop, tablet, dan mobile.
+            </div>
+            <div class="alert">
+                <strong>🌙 Dark Mode:</strong> Aktifkan dark mode untuk pengalaman visual yang berbeda.
+            </div>
+
+            <!-- TROUBLESHOOTING -->
+            <h2>❓ Troubleshooting</h2>
+            <h3>Lupa Password?</h3>
+            <p>Ganti password di menu "Profile" pada dashboard admin. Anda perlu password lama untuk mengubahnya.</p>
+
+            <h3>Data Hilang?</h3>
+            <p>Data disimpan di localStorage browser. Jika Anda menghapus browser cache, semua data akan hilang. Backup produk Anda secara berkala.</p>
+
+            <h3>Keranjang Kosong di Halaman Lain?</h3>
+            <p>Setiap kali membuka halaman toko, pastikan halaman sudah fully loaded sebelum menambah produk ke keranjang.</p>
+
+            <!-- KONTAK -->
+            <h2>📞 Kontak & Support</h2>
+            <p>Jika ada pertanyaan atau masalah, hubungi kami:</p>
+            <p>📧 Email: <strong>admin@duckystore.com</strong></p>
+            <p>📱 WhatsApp: <strong>+62 831 9941 5324</strong></p>
+
+            <!-- BUTTON GROUP -->
+            <div class="button-group" style="margin-top: 3rem;">
+                <a href="landing.html" class="btn btn-primary">🏠 Ke Landing Page</a>
+                <a href="login.html" class="btn btn-primary">🔐 Ke Admin Login</a>
+                <a href="index.html" class="btn btn-secondary">🛒 Ke Toko</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 DuckyStore. Semua hak cipta dilindungi.</p>
+            <p>Panduan Penggunaan Aplikasi DuckyStore Admin</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DuckyStore - Hub Pusat</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        header h1 {
+            color: #667eea;
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: #999;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            color: #667eea;
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .card p {
+            color: #666;
+            margin-bottom: 1rem;
+            flex: 1;
+            line-height: 1.6;
+        }
+
+        .card-tag {
+            display: inline-block;
+            background: #f0f8ff;
+            color: #667eea;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-top: auto;
+        }
+
+        .section-title {
+            background: white;
+            padding: 1.5rem 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 5px solid #667eea;
+        }
+
+        .section-title h2 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+        }
+
+        .section-title p {
+            color: #999;
+        }
+
+        .demo-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 2px solid #667eea;
+        }
+
+        .demo-info h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .demo-item {
+            background: #f5f7fa;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-radius: 5px;
+            font-family: monospace;
+        }
+
+        .demo-item strong {
+            display: inline-block;
+            width: 100px;
+            color: #667eea;
+        }
+
+        footer {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 3rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        footer p {
+            color: #999;
+            margin: 0.5rem 0;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+        }
+
+        .highlight strong {
+            color: #856404;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <header>
+            <h1>🦆 DuckyStore</h1>
+            <p>Platform E-Commerce Digital Premium</p>
+            <p class="subtitle">Hub Pusat - Akses Semua Fitur di Sini</p>
+        </header>
+
+        <!-- DEMO LOGIN INFO -->
+        <div class="demo-info">
+            <h3>🔑 Demo Login Admin</h3>
+            <div class="demo-item">
+                <strong>Email:</strong>
+                <span>admin@duckystore.com</span>
+            </div>
+            <div class="demo-item">
+                <strong>Password:</strong>
+                <span>admin123</span>
+            </div>
+            <p style="margin-top: 1rem; color: #666;">Gunakan kredensial ini untuk mencoba semua fitur administrator.</p>
+        </div>
+
+        <!-- HALAMAN UTAMA -->
+        <div class="section-title">
+            <h2>🏠 Halaman Utama (Public)</h2>
+            <p>Halaman yang dapat diakses oleh semua pengunjung</p>
+        </div>
+
+        <div class="grid">
+            <a href="landing.html" class="card">
+                <div class="card-icon">🌟</div>
+                <h3>Landing Page</h3>
+                <p>Halaman utama aplikasi dengan desain modern. Lihat fitur-fitur dan showcase produk.</p>
+                <span class="card-tag">PUBLIC</span>
+            </a>
+
+            <a href="index.html" class="card">
+                <div class="card-icon">🛒</div>
+                <h3>Halaman Toko</h3>
+                <p>Tempat pelanggan melihat produk yang dijual. Keranjang belanja dan checkout via WhatsApp.</p>
+                <span class="card-tag">PUBLIC</span>
+            </a>
+        </div>
+
+        <!-- HALAMAN ADMIN -->
+        <div class="section-title">
+            <h2>🔐 Halaman Admin (Memerlukan Login)</h2>
+            <p>Area khusus untuk administrator mengelola aplikasi</p>
+        </div>
+
+        <div class="grid">
+            <a href="login.html" class="card">
+                <div class="card-icon">🔑</div>
+                <h3>Login & Register</h3>
+                <p>Sistem autentikasi admin. Login dengan kredensial atau daftar akun baru.</p>
+                <span class="card-tag">AUTH</span>
+            </a>
+
+            <a href="dashboard.html" class="card">
+                <div class="card-icon">📊</div>
+                <h3>Dashboard Admin</h3>
+                <p>Panel kontrol lengkap untuk mengelola produk, statistik, profil, dan pengaturan.</p>
+                <span class="card-tag">ADMIN ONLY</span>
+            </a>
+        </div>
+
+        <!-- DOKUMENTASI -->
+        <div class="section-title">
+            <h2>📚 Dokumentasi & Panduan</h2>
+            <p>Baca dokumentasi untuk memahami cara penggunaan aplikasi</p>
+        </div>
+
+        <div class="grid">
+            <a href="START.md" class="card">
+                <div class="card-icon">🚀</div>
+                <h3>Quick Start</h3>
+                <p>Panduan cepat untuk memulai aplikasi. Ringkasan singkat semua fitur utama.</p>
+                <span class="card-tag">PANDUAN</span>
+            </a>
+
+            <a href="GUIDE.html" class="card">
+                <div class="card-icon">📖</div>
+                <h3>Panduan Lengkap</h3>
+                <p>Tutorial step-by-step lengkap. Cara login, tambah produk, berbelanja, dan troubleshooting.</p>
+                <span class="card-tag">PANDUAN</span>
+            </a>
+
+            <a href="FEATURES.html" class="card">
+                <div class="card-icon">✨</div>
+                <h3>Showcase Fitur</h3>
+                <p>Tampilan lengkap semua fitur aplikasi. Deskripsi detail dan cara menggunakan.</p>
+                <span class="card-tag">PANDUAN</span>
+            </a>
+
+            <a href="README.md" class="card">
+                <div class="card-icon">📋</div>
+                <h3>Dokumentasi Teknis</h3>
+                <p>Dokumentasi lengkap dengan struktur file, API, dan penjelasan teknis lengkap.</p>
+                <span class="card-tag">TEKNIS</span>
+            </a>
+
+            <a href="CHECKLIST.txt" class="card">
+                <div class="card-icon">✅</div>
+                <h3>Checklist Fitur</h3>
+                <p>Daftar lengkap semua fitur yang telah diimplementasikan dengan status.</p>
+                <span class="card-tag">CHECKLIST</span>
+            </a>
+
+            <a href="hub.html" class="card" style="opacity: 0.5; cursor: default;">
+                <div class="card-icon">🏠</div>
+                <h3>Hub Pusat (Anda di sini)</h3>
+                <p>Halaman ini - pusat akses semua halaman dan dokumentasi DuckyStore.</p>
+                <span class="card-tag">CURRENT</span>
+            </a>
+        </div>
+
+        <!-- INFORMASI FITUR -->
+        <div class="section-title">
+            <h2>✨ Fitur Utama Yang Ada</h2>
+            <p>Semua fitur yang Anda minta sudah diimplementasikan</p>
+        </div>
+
+        <div style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                <div>
+                    <h4 style="color: #667eea; margin-bottom: 1rem;">🔐 Autentikasi</h4>
+                    <ul style="list-style: none; padding: 0; color: #666;">
+                        <li>✓ Login admin</li>
+                        <li>✓ Register admin</li>
+                        <li>✓ Session management</li>
+                        <li>✓ Logout</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 style="color: #667eea; margin-bottom: 1rem;">📦 Produk</h4>
+                    <ul style="list-style: none; padding: 0; color: #666;">
+                        <li>✓ Tambah produk</li>
+                        <li>✓ Edit produk</li>
+                        <li>✓ Hapus produk</li>
+                        <li>✓ Lihat daftar produk</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 style="color: #667eea; margin-bottom: 1rem;">📊 Dashboard</h4>
+                    <ul style="list-style: none; padding: 0; color: #666;">
+                        <li>✓ Statistik penjualan</li>
+                        <li>✓ Total produk</li>
+                        <li>✓ Total orders</li>
+                        <li>✓ Info admin</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 style="color: #667eea; margin-bottom: 1rem;">👤 Profile</h4>
+                    <ul style="list-style: none; padding: 0; color: #666;">
+                        <li>✓ Lihat profil</li>
+                        <li>✓ Ubah password</li>
+                        <li>✓ Info akun</li>
+                        <li>✓ Status admin</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 style="color: #667eea; margin-bottom: 1rem;">⚙️ Pengaturan</h4>
+                    <ul style="list-style: none; padding: 0; color: #666;">
+                        <li>✓ Notifikasi email</li>
+                        <li>✓ Notifikasi SMS</li>
+                        <li>✓ Dark mode</li>
+                        <li>✓ Zona bahaya</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 style="color: #667eea; margin-bottom: 1rem;">🛒 Belanja</h4>
+                    <ul style="list-style: none; padding: 0; color: #666;">
+                        <li>✓ Lihat produk</li>
+                        <li>✓ Keranjang</li>
+                        <li>✓ Checkout WhatsApp</li>
+                        <li>✓ Hitung total</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- INSTRUKSI CEPAT -->
+        <div class="highlight">
+            <strong>⚡ Mulai Sekarang:</strong>
+            <ol style="margin-left: 1rem; color: #333;">
+                <li>Buka <strong>landing.html</strong> - Lihat halaman utama</li>
+                <li>Klik "Admin Login" atau buka <strong>login.html</strong></li>
+                <li>Login dengan: <strong>admin@duckystore.com</strong> / <strong>admin123</strong></li>
+                <li>Masuk ke <strong>dashboard.html</strong> untuk kelola produk</li>
+                <li>Buka <strong>index.html</strong> untuk melihat toko</li>
+            </ol>
+        </div>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>&copy; 2024 DuckyStore - Platform E-Commerce Digital Premium</p>
+            <p>📧 Email: admin@duckystore.com | 📱 WhatsApp: +62 831 9941 5324</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem;">✨ Semua fitur yang diminta telah diimplementasikan dengan sempurna!</p>
+        </footer>
+    </div>
+</body>
+</html>

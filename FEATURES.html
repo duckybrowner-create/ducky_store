@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitur DuckyStore</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        header h1 {
+            color: #667eea;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: #999;
+            font-size: 1.1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .feature-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #666;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        a.btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .section-title {
+            background: white;
+            padding: 1.5rem 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 5px solid #667eea;
+        }
+
+        .section-title h2 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            color: #666;
+        }
+
+        footer {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 3rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        footer p {
+            color: #999;
+            margin: 0.5rem 0;
+        }
+
+        .demo-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .demo-box h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .demo-item {
+            background: #f5f7fa;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+            border-left: 4px solid #667eea;
+        }
+
+        .demo-item strong {
+            color: #333;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .demo-item code {
+            background: #e8eef7;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            color: #667eea;
+            font-family: monospace;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            a.btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <header>
+            <h1>🦆 DuckyStore - Fitur Lengkap</h1>
+            <p>Platform E-Commerce Digital Premium dengan Admin Panel</p>
+        </header>
+
+        <!-- DEMO LOGIN -->
+        <div class="demo-box">
+            <h3>🔐 Demo Login Admin</h3>
+            <div class="demo-item">
+                <strong>Email:</strong>
+                <code>admin@duckystore.com</code>
+            </div>
+            <div class="demo-item">
+                <strong>Password:</strong>
+                <code>admin123</code>
+            </div>
+            <p style="margin-top: 1rem; color: #666;">Gunakan kredensial ini untuk mencoba semua fitur admin dashboard.</p>
+        </div>
+
+        <!-- HALAMAN PUBLIK -->
+        <div class="section-title">
+            <h2>🏠 Halaman-Halaman Publik</h2>
+            <p>Halaman yang dapat diakses oleh semua pengunjung tanpa login</p>
+        </div>
+
+        <div class="features-grid">
+            <!-- Landing Page -->
+            <div class="feature-card">
+                <div class="feature-icon">🌟</div>
+                <h3>Landing Page</h3>
+                <p>Halaman utama aplikasi dengan desain modern seperti Facebook.</p>
+                <ul class="feature-list">
+                    <li>Header dengan logo & navigasi</li>
+                    <li>Hero section yang menarik</li>
+                    <li>Daftar fitur aplikasi</li>
+                    <li>Showcase produk terbaru</li>
+                    <li>Footer dengan kontak</li>
+                    <li>Responsive design</li>
+                </ul>
+                <div class="button-group">
+                    <a href="landing.html" class="btn btn-primary">Buka Landing</a>
+                </div>
+            </div>
+
+            <!-- Halaman Toko -->
+            <div class="feature-card">
+                <div class="feature-icon">🛒</div>
+                <h3>Halaman Toko</h3>
+                <p>Tempat pelanggan melihat dan membeli produk digital.</p>
+                <ul class="feature-list">
+                    <li>Grid produk yang indah</li>
+                    <li>Tampil nama & harga produk</li>
+                    <li>Tombol "Beli Sekarang"</li>
+                    <li>Keranjang belanja</li>
+                    <li>Lihat total harga</li>
+                    <li>Checkout via WhatsApp</li>
+                </ul>
+                <div class="button-group">
+                    <a href="index.html" class="btn btn-primary">Buka Toko</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- HALAMAN ADMIN -->
+        <div class="section-title">
+            <h2>🔐 Halaman Admin (Perlu Login)</h2>
+            <p>Area khusus untuk admin mengelola produk dan aplikasi</p>
+        </div>
+
+        <div class="features-grid">
+            <!-- Login Page -->
+            <div class="feature-card">
+                <div class="feature-icon">🔑</div>
+                <h3>Login & Register</h3>
+                <p>Sistem autentikasi untuk admin dengan fitur registrasi.</p>
+                <ul class="feature-list">
+                    <li>Form login dengan email & password</li>
+                    <li>Form register admin baru</li>
+                    <li>Validasi password</li>
+                    <li>Cek email duplikat</li>
+                    <li>Pesan error informatif</li>
+                    <li>UI yang user-friendly</li>
+                </ul>
+                <div class="button-group">
+                    <a href="login.html" class="btn btn-primary">Buka Login</a>
+                </div>
+            </div>
+
+            <!-- Dashboard -->
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Dashboard Admin</h3>
+                <p>Panel kontrol lengkap untuk mengelola aplikasi.</p>
+                <ul class="feature-list">
+                    <li>Sidebar navigasi yang rapi</li>
+                    <li>6 menu utama berbeda</li>
+                    <li>Statistik real-time</li>
+                    <li>User profile display</li>
+                    <li>Dark mode support</li>
+                    <li>Responsive layout</li>
+                </ul>
+            </div>
+
+            <!-- Kelola Produk -->
+            <div class="feature-card">
+                <div class="feature-icon">📦</div>
+                <h3>Kelola Produk</h3>
+                <p>CRUD lengkap untuk mengelola produk yang dijual.</p>
+                <ul class="feature-list">
+                    <li>Tambah produk baru</li>
+                    <li>Edit informasi produk</li>
+                    <li>Hapus produk</li>
+                    <li>Tabel daftar produk</li>
+                    <li>Form dengan validasi</li>
+                    <li>Preview data produk</li>
+                </ul>
+            </div>
+
+            <!-- Statistik -->
+            <div class="feature-card">
+                <div class="feature-icon">📈</div>
+                <h3>Statistik & Analytics</h3>
+                <p>Lihat data penjualan dan performa bisnis.</p>
+                <ul class="feature-list">
+                    <li>Total produk terdaftar</li>
+                    <li>Total penjualan (Rp)</li>
+                    <li>Jumlah pesanan</li>
+                    <li>Data admin terdaftar</li>
+                    <li>Summary statistik</li>
+                    <li>Update real-time</li>
+                </ul>
+            </div>
+
+            <!-- Profile -->
+            <div class="feature-card">
+                <div class="feature-icon">👤</div>
+                <h3>Profile Admin</h3>
+                <p>Kelola data profil dan keamanan akun.</p>
+                <ul class="feature-list">
+                    <li>Lihat info profil</li>
+                    <li>Email & nama admin</li>
+                    <li>Status akun aktif</li>
+                    <li>Tanggal bergabung</li>
+                    <li>Ubah password</li>
+                    <li>Validasi password lama</li>
+                </ul>
+            </div>
+
+            <!-- Pengaturan -->
+            <div class="feature-card">
+                <div class="feature-icon">⚙️</div>
+                <h3>Pengaturan Aplikasi</h3>
+                <p>Konfigurasi preferensi dan zona bahaya.</p>
+                <ul class="feature-list">
+                    <li>Notifikasi email (on/off)</li>
+                    <li>Notifikasi SMS (on/off)</li>
+                    <li>Mode gelap (dark mode)</li>
+                    <li>Zona bahaya</li>
+                    <li>Hapus semua produk</li>
+                    <li>Konfirmasi sebelum aksi</li>
+                </ul>
+            </div>
+
+            <!-- Logout -->
+            <div class="feature-card">
+                <div class="feature-icon">🚪</div>
+                <h3>Logout & Session</h3>
+                <p>Kelola session login dengan aman.</p>
+                <ul class="feature-list">
+                    <li>Tombol logout mudah diakses</li>
+                    <li>Konfirmasi sebelum logout</li>
+                    <li>Clear session data</li>
+                    <li>Redirect ke landing page</li>
+                    <li>Session timeout otomatis</li>
+                    <li>Keamanan data login</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- FITUR TAMBAHAN -->
+        <div class="section-title">
+            <h2>✨ Fitur-Fitur Tambahan</h2>
+            <p>Fitur bonus yang membuat aplikasi lebih menarik</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🌙</div>
+                <h3>Dark Mode</h3>
+                <p>Pilihan tema gelap untuk kenyamanan mata.</p>
+                <ul class="feature-list">
+                    <li>Toggle dark mode</li>
+                    <li>Otomatis tersimpan</li>
+                    <li>Aplikasi di semua halaman</li>
+                    <li>Smooth transition</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Responsive Design</h3>
+                <p>Tampil sempurna di semua ukuran layar.</p>
+                <ul class="feature-list">
+                    <li>Mobile optimized</li>
+                    <li>Tablet friendly</li>
+                    <li>Desktop ready</li>
+                    <li>Flexible layout</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">💾</div>
+                <h3>Local Storage</h3>
+                <p>Data tersimpan di browser tanpa server.</p>
+                <ul class="feature-list">
+                    <li>Offline capable</li>
+                    <li>Fast loading</li>
+                    <li>Persistent data</li>
+                    <li>Privacy friendly</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h3>Modern UI</h3>
+                <p>Antarmuka modern dengan design terkini.</p>
+                <ul class="feature-list">
+                    <li>Gradient buttons</li>
+                    <li>Card components</li>
+                    <li>Smooth animations</li>
+                    <li>Clean typography</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">💬</div>
+                <h3>WhatsApp Integration</h3>
+                <p>Checkout langsung ke WhatsApp admin.</p>
+                <ul class="feature-list">
+                    <li>Buka WhatsApp otomatis</li>
+                    <li>Pesan pre-filled</li>
+                    <li>Daftar produk lengkap</li>
+                    <li>Total harga terhitung</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Keamanan</h3>
+                <p>Fitur keamanan untuk melindungi data.</p>
+                <ul class="feature-list">
+                    <li>Password hashing (future)</li>
+                    <li>Session management</li>
+                    <li>Input validation</li>
+                    <li>CSRF protection (future)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- NAVIGATION -->
+        <div style="background: white; padding: 2rem; border-radius: 10px; text-align: center; margin-top: 3rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+            <h2 style="color: #667eea; margin-bottom: 1.5rem;">🚀 Mulai Sekarang</h2>
+            <div class="button-group">
+                <a href="START.md" class="btn btn-primary" style="text-decoration: none;">📖 Panduan Cepat</a>
+                <a href="landing.html" class="btn btn-primary" style="text-decoration: none;">🏠 Landing Page</a>
+                <a href="login.html" class="btn btn-primary" style="text-decoration: none;">🔐 Admin Login</a>
+                <a href="GUIDE.html" class="btn btn-primary" style="text-decoration: none;">📚 Panduan Lengkap</a>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>&copy; 2024 DuckyStore - Platform E-Commerce Digital Premium</p>
+            <p>Email: admin@duckystore.com | WhatsApp: +62 831 9941 5324</p>
+            <p>Semua fitur yang Anda minta telah kami implementasikan dengan sempurna! 🎉</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DuckyStore - Platform Digital Premium</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Roboto', sans-serif;
+            background: #0f0f23;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* HEADER/NAVBAR */
+        header {
+            background: rgba(15, 15, 35, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(102, 126, 234, 0.2);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #aaa;
+            text-decoration: none;
+            transition: 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #667eea;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 2rem;
+            text-align: center;
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #aaa;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+
+        .btn-secondary:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        /* FEATURES SECTION */
+        .features {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            color: #fff;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.05) 100%);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .feature-card:hover {
+            border-color: #667eea;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #667eea;
+        }
+
+        .feature-card p {
+            color: #aaa;
+            line-height: 1.8;
+        }
+
+        /* STATS SECTION */
+        .stats {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #aaa;
+            font-size: 1.1rem;
+        }
+
+        /* PRODUCTS SHOWCASE */
+        .products-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 2rem;
+        }
+
+        .products-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .products-intro p {
+            font-size: 1.1rem;
+            color: #aaa;
+            max-width: 600px;
+            margin: 1rem auto;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .product-item {
+            background: rgba(102, 126, 234, 0.1);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .product-item:hover {
+            background: rgba(102, 126, 234, 0.2);
+            border-color: #667eea;
+            transform: translateY(-5px);
+        }
+
+        .product-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-name {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-price {
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .product-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+            width: 100%;
+        }
+
+        .product-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            max-width: 1000px;
+            margin: 100px auto;
+            padding: 60px 2rem;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            color: #aaa;
+            margin-bottom: 2rem;
+        }
+
+        /* FOOTER */
+        footer {
+            border-top: 1px solid rgba(102, 126, 234, 0.2);
+            padding: 3rem 2rem;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: #aaa;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #667eea;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            color: #666;
+            border-top: 1px solid rgba(102, 126, 234, 0.1);
+            padding-top: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-bottom p {
+            margin: 0.5rem 0;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        /* ANIMATION */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1,
+        .hero p,
+        .cta-buttons {
+            animation: fadeInUp 0.8s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <nav>
+            <div class="logo">🦆 DuckyStore</div>
+            <ul>
+                <li><a href="#features">Fitur</a></li>
+                <li><a href="#products">Produk</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Belanja Digital Premium Jadi Lebih Mudah</h1>
+        <p>Platform terpercaya untuk membeli dan menjual produk digital berkualitas tinggi dengan harga terjangkau</p>
+        <div class="cta-buttons">
+            <button class="btn btn-primary" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Lihat Produk</button>
+            <button class="btn btn-secondary" onclick="window.location.href='index.html'">Mulai Belanja</button>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="features">
+        <h2 class="section-title">Mengapa Pilih DuckyStore?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Aman & Terpercaya</h3>
+                <p>Sistem keamanan berlapis untuk melindungi setiap transaksi Anda dengan enkripsi tingkat tinggi</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Instan & Cepat</h3>
+                <p>Verifikasi otomatis dan akses produk dalam hitungan detik setelah pembayaran</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>Harga Kompetitif</h3>
+                <p>Dapatkan harga terbaik di pasaran dengan promo menarik sepanjang tahun</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <h3>Support 24/7</h3>
+                <p>Tim customer service siap membantu Anda kapan saja melalui WhatsApp</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <h3>Akses Global</h3>
+                <p>Gunakan dari perangkat manapun, dimanapun, kapan saja tanpa batasan</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Produk Pilihan</h3>
+                <p>Kurasi produk digital terbaik dari brand ternama yang sudah terbukti kualitasnya</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats">
+        <div class="stat-card">
+            <div class="stat-number" id="stat-products">0</div>
+            <div class="stat-label">Produk Tersedia</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">1000+</div>
+            <div class="stat-label">Pengguna Aktif</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">98%</div>
+            <div class="stat-label">Kepuasan Pelanggan</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Layanan Tersedia</div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="products" class="products-section">
+        <div class="products-intro">
+            <h2 class="section-title">Produk Pilihan Kami</h2>
+            <p>Koleksi lengkap produk digital premium dengan kualitas terbaik dan harga terjangkau</p>
+        </div>
+        <div class="products-grid" id="products-container">
+            <!-- Produk akan ditampilkan di sini -->
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" id="contact">
+        <h2>Siap Memulai?</h2>
+        <p>Jangan lewatkan kesempatan untuk mendapatkan produk digital premium dengan harga spesial</p>
+        <button class="btn btn-primary" onclick="window.location.href='index.html'">Jelajahi Sekarang</button>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Tentang DuckyStore</h4>
+                <p>Platform e-commerce digital terpercaya dengan ribuan produk berkualitas tinggi</p>
+            </div>
+            <div class="footer-section">
+                <h4>Kategori</h4>
+                <ul>
+                    <li><a href="#">Canva</a></li>
+                    <li><a href="#">CapCut Pro</a></li>
+                    <li><a href="#">ChatGPT</a></li>
+                    <li><a href="#">Netflix</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Kontak</h4>
+                <ul>
+                    <li><a href="mailto:admin@duckystore.com">admin@duckystore.com</a></li>
+                    <li><a href="https://wa.me/6283199415324" target="_blank">+62 831 9941 5324</a></li>
+                    <li><a href="https://www.codedex.io/" target="_blank">Codedex.io</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 DuckyStore. Semua hak cipta dilindungi.</p>
+            <p>Platform e-commerce digital premium untuk memenuhi kebutuhan digital Anda</p>
+        </div>
+    </footer>
+
+    <script>
+        // Load products dari localStorage
+        function loadProducts() {
+            const products = JSON.parse(localStorage.getItem('products')) || [];
+            const container = document.getElementById('products-container');
+            container.innerHTML = '';
+
+            // Update stats
+            document.getElementById('stat-products').textContent = products.length;
+
+            if (products.length === 0) {
+                container.innerHTML = '<p style="grid-column: 1/-1; text-align: center; padding: 3rem; color: #aaa;">Belum ada produk tersedia. Segera hubungi admin untuk menambahkan produk baru!</p>';
+                return;
+            }
+
+            products.forEach(product => {
+                const card = document.createElement('div');
+                card.className = 'product-item';
+                card.innerHTML = `
+                    <div class="product-icon">📦</div>
+                    <div class="product-name">${product.name}</div>
+                    <div class="product-price">Rp ${parseInt(product.price).toLocaleString('id-ID')}</div>
+                    <button class="product-btn" onclick="buyProduct('${product.name}', ${product.price})">Beli Sekarang</button>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Checkout langsung ke WhatsApp
+        function buyProduct(name, price) {
+            const phone = "6283199415324";
+            const message = `Halo admin DuckyStore, saya ingin membeli:\n\n• ${name} - Rp ${parseInt(price).toLocaleString('id-ID')}\n\nMohon konfirmasi dan info selengkapnya. Terima kasih!`;
+            
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
+        }
+
+        // Load products on page load
+        loadProducts();
+
+        // Hidden admin access - tekan 'A' 3x dengan cepat untuk membuka login
+        let adminTaps = 0;
+        let lastTapTime = 0;
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.key.toLowerCase() === 'a') {
+                let currentTime = new Date().getTime();
+                if (currentTime - lastTapTime > 500) {
+                    adminTaps = 1;
+                } else {
+                    adminTaps++;
+                }
+                lastTapTime = currentTime;
+                
+                if (adminTaps === 3) {
+                    window.location.href = 'login.html';
+                    adminTaps = 0;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+</body>
+</html>
