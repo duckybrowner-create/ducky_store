@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "products": {
+      ".read": true,
+      ".write": true
+    },
+    "users": {
+      ".read": "auth != null",
+      ".write": "auth.uid === $uid"
+    }
+  }
+}

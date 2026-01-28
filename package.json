@@ -1,0 +1,17 @@
+{
+  "name": "duckystore",
+  "version": "1.0.0",
+  "description": "DuckyStore - Platform E-commerce Digital Premium",
+  "type": "module",
+  "scripts": {
+    "serve": "npx http-server -p 8000",
+    "build": "echo 'No build needed for vanilla JS'",
+    "start": "npx http-server -p 8000"
+  },
+  "dependencies": {
+    "firebase": "^10.7.0"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
