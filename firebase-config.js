@@ -2,12 +2,14 @@
 // PENTING: Ganti dengan credentials Firebase Anda sendiri
 
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyDpreyW8sMLTW6O-jQ6UQpGdowMmW7lxkw",
+  authDomain: "duckystore-173a6.firebaseapp.com",
+  projectId: "duckystore-173a6",
+  storageBucket: "duckystore-173a6.firebasestorage.app",
+  messagingSenderId: "1009044708659",
+  appId: "1:1009044708659:web:ae468968bb5faf268d7246",
+  databaseURL: "https://duckystore-173a6-default-rtdb.asia-southeast1.firebasedatabase.app",
+  measurementId: "G-T8ZH85NQNF"
 };
 
 // Initialize Firebase
