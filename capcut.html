@@ -9,32 +9,32 @@
 <body>
 
 <header class="header">
-  <div class="header-left">
-    <h1>CapCut Pro</h1>
-  </div>
-  <div class="header-right">
-    <a href="index.html" class="back-link">⬅ Kembali ke toko</a>
-  </div>
+    <div class="logo-section">
+        <h1>CapCut Pro</h1>
+    </div>
+    <div class="header-actions">
+        <a href="index.html">⬅ Kembali</a>
+    </div>
 </header>
 
 <section class="container">
-  <div class="product-detail">
-    <img src="capcut.png" class="detail-img" alt="CapCut Pro">
-    <div class="detail-info">
-      <h2>CapCut Pro Premium</h2>
-      <p>Akun CapCut Pro aktif 30 hari • Full akses premium</p>
-      <p class="price">Rp 10.000</p>
-      <button class="buy-btn" id="waCheckout">Checkout WhatsApp</button>
+    <div class="product-detail">
+        <img src="capcut.png" alt="CapCut Pro" class="detail-img">
+        <div class="detail-info">
+            <h2>CapCut Pro Premium</h2>
+            <p>Akses penuh semua fitur CapCut Pro</p>
+            <p class="price">Rp 10.000</p>
+            <button onclick="checkoutWA('CapCut Pro Premium','Rp 10.000')">Checkout WhatsApp</button>
+        </div>
     </div>
-  </div>
 </section>
 
 <script>
-document.getElementById("waCheckout").addEventListener("click", function() {
-    const nomorWA = "6283199415324";
-    const text = `Halo admin, saya mau beli:\n\nProduk: CapCut Pro Premium\nHarga: Rp 10.000`;
-    window.open(`https://wa.me/${nomorWA}?text=${encodeURIComponent(text)}`, "_blank");
-});
+function checkoutWA(name, price){
+    const phone = "6283199415324";
+    const text = `Halo admin, saya mau beli:\n\nProduk: ${name}\nHarga: ${price}`;
+    window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`);
+}
 </script>
 
 </body>

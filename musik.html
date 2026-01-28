@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Netflix Premium - DuckyStore</title>
+<title>Spotify Premium - DuckyStore</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="header">
     <div class="logo-section">
-        <h1>Netflix Premium</h1>
+        <h1>Spotify Premium</h1>
     </div>
     <div class="header-actions">
         <a href="index.html">⬅ Kembali</a>
@@ -19,12 +19,11 @@
 
 <section class="container">
     <div class="product-detail">
-        <img src="netflix.png" alt="Netflix Premium" class="detail-img">
+        <img src="musik.png" alt="Canva Pro" class="detail-img">
         <div class="detail-info">
-            <h2>Netflix Premium</h2>
-            <p>Akses semua film & series tanpa batas</p>
-            <p class="price">Rp 35.000</p>
-            <button onclick="checkoutWA('Netflix Premium','Rp 35.000')">Checkout WhatsApp</button>
+            <h2>Musik sportify</h2>
+            <p>Music sprotify aktif 30 hari Full akses premium</p>
+            <button onclick="checkoutWA('musik','Rp 15.000')">Checkout WhatsApp</button>
         </div>
     </div>
 </section>
@@ -32,7 +31,7 @@
 <script>
 function checkoutWA(name, price){
     const phone = "6283199415324";
-    const text = `Halo admin, saya mau beli:\n\nProduk: ${name}\nHarga: ${price}`;
+    const text = `Halo, saya mau beli:\n\nProduk: ${name}\n:`;
     window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`);
 }
 </script>

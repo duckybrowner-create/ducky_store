@@ -1,42 +1,40 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canva Premium - DuckyStore</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Canva Pro Premium - DuckyStore</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="header">
-    <div class="header-left">
-        <h1>Canva Premium</h1>
+    <div class="logo-section">
+        <h1>Canva Pro Premium</h1>
     </div>
-    <div class="header-right">
-        <a href="index.html" class="back-link">⬅ Kembali ke toko</a>
+    <div class="header-actions">
+        <a href="index.html">⬅ Kembali</a>
     </div>
 </header>
 
 <section class="container">
     <div class="product-detail">
-        <img src="canva.jpeg" class="detail-img" alt="Canva Premium">
+        <img src="canva.jpeg" alt="Canva Pro" class="detail-img">
         <div class="detail-info">
             <h2>Canva Pro Premium</h2>
             <p>Akun Canva Pro aktif 30 hari • Full akses premium</p>
             <p class="price">Rp 15.000</p>
-
-            <!-- Tombol Checkout WA -->
-            <button class="buy-btn" id="waCheckout">Checkout WhatsApp</button>
+            <button onclick="checkoutWA('Canva Pro Premium','Rp 15.000')">Checkout WhatsApp</button>
         </div>
     </div>
 </section>
 
 <script>
-document.getElementById("waCheckout").addEventListener("click", function() {
-    const nomorWA = "6283199415324"; // Nomor WA kamu (ganti 0 awal jadi 62)
-    const text = `Halo admin, saya mau beli:\n\nProduk: Canva Pro Premium\nHarga: Rp 15.000`;
-    window.open(`https://wa.me/${nomorWA}?text=${encodeURIComponent(text)}`, "_blank");
-});
+function checkoutWA(name, price){
+    const phone = "6283199415324";
+    const text = `Halo admin, saya mau beli:\n\nProduk: ${name}\nHarga: ${price}`;
+    window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`);
+}
 </script>
 
 </body>
